@@ -1,11 +1,11 @@
 #!/bin/bash
-golinks_html=build/index.html
+glnk_html=build/index.html
 
 # Create the build directory if it doesn't exist
 mkdir -p build
 
 # Create the HTML file using the JSON data
-cat <<EOL >$golinks_html
+cat <<EOL >$glnk_html
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,16 +35,16 @@ cat <<EOL >$golinks_html
 EOL
 
 # Loop through the JSON data and generate the table rows
-# jq -r '. | to_entries[] | "<tr><td><a href=\"/go" + .key + "\">/go" + .key + "</a></td><td><a href=\"" + .value + "\">" + .value + "</a></td></tr>"' golinks.json >>$golinks_html
-jq -r '. | to_entries[] | "<tr><td><a href=\"" + .key + "\">" + .key + "</a></td><td><a href=\"" + .value + "\">" + .value + "</a></td></tr>"' golinks.json >>$golinks_html
+# jq -r '. | to_entries[] | "<tr><td><a href=\"/go" + .key + "\">/go" + .key + "</a></td><td><a href=\"" + .value + "\">" + .value + "</a></td></tr>"' glnk.json >>$glnk_html
+jq -r '. | to_entries[] | "<tr><td><a href=\"" + .key + "\">" + .key + "</a></td><td><a href=\"" + .value + "\">" + .value + "</a></td></tr>"' glnk.json >>$glnk_html
 
 # Complete the HTML file
-echo "</table></body></html>" >>$golinks_html
-echo "Generated $golinks_html successfully!"
+echo "</table></body></html>" >>$glnk_html
+echo "Generated $glnk_html successfully!"
 
 declare -A redirect_mapping
 
-# Assuming golinks.json contains a valid JSON object with keys and values.
+# Assuming glnk.json contains a valid JSON object with keys and values.
 # For example:
 # {
 #   "subpath1": "redirect_link1",
@@ -55,7 +55,7 @@ declare -A redirect_mapping
 # Read the JSON file and populate the associative array
 while read -r subpath redirect_link; do
     redirect_mapping["$subpath"]=$redirect_link
-done < <(jq -r 'to_entries[] | "\(.key) \(.value)"' golinks.json)
+done < <(jq -r 'to_entries[] | "\(.key) \(.value)"' glnk.json)
 
 # Iterate through the associative array to get the matching order
 for subpath in "${!redirect_mapping[@]}"; do
