@@ -55,7 +55,7 @@ Welcome to the **glnk-template** repository! This template serves as the foundat
 
 ## GitHub Actions Workflow
 
-This template includes a GitHub Actions workflow that automatically deploys the generated HTML pages to GitHub Pages. The workflow is defined in the `.github/workflows/static.yml` file.
+This template includes a GitHub Actions workflow that automatically deploys the generated HTML pages to GitHub Pages. The workflow is defined in the `.github/workflows/deploy-pages.yml` file.
 
 ## Contribution Guidelines
 

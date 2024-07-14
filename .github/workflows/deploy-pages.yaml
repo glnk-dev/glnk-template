@@ -30,19 +30,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Setup pages
         uses: actions/configure-pages@v3
-      
-      - name: Generate html pages
-        run: bash generate_html.sh
+
+      - name: Fetch HTML generation script
+        run: wget https://raw.githubusercontent.com/glnk-dev/.github/main/scripts/generate_html.sh
+
+      - name: Make script executable
+        run: chmod +x generate_html.sh
+
+      - name: Generate HTML pages
+        run: |
+          username=${GITHUB_REPOSITORY#*-}
+          ./generate_html.sh $username
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub pages
         id: deployment
         uses: actions/deploy-pages@v2
