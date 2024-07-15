@@ -1,4 +1,4 @@
-# glnk-template - Template Repository for glnk-dev User Pages
+# glnk-template - Template Repository for [glnk-dev](https://glnk.dev) User Pages
 
 Welcome to the **glnk-template** repository! This template serves as the foundation for creating personalized `<username>.glnk.dev` pages. It includes the necessary HTML generator and GitHub Actions workflow to deploy user-specific go link mappings.
 
