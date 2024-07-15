@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate HTML pages
         run: |
-          username=${GITHUB_REPOSITORY#*-}
+          username=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2 | cut -d'-' -f2-)
           ./generate_html.sh $username
 
       - name: Upload artifact
