@@ -25,6 +25,6 @@ jobs:
           echo "username=$username" >> $GITHUB_OUTPUT
           
       - name: Build and Deploy GitHub Pages
-        uses: glnk-dev/webapp@v0.1.2
+        uses: glnk-dev/webapp@main
         with:
           GLNK_USERNAME: ${{ steps.fetch-metadata.outputs.username }}
