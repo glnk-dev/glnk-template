@@ -1,61 +1,12 @@
-# glnk-template - Template Repository for [glnk-dev](https://glnk.dev) User Pages
+# glnk-template - Template Repository for glnk-dev User Pages
 
 Welcome to the **glnk-template** repository! This template serves as the foundation for creating personalized `<username>.glnk.dev` pages. It includes the necessary HTML generator and GitHub Actions workflow to deploy user-specific go link mappings.
 
 ## Features
 
-- **HTML Generator:** Automatically generates HTML pages based on the `glnk.json` file.
+- **HTML Generator:** Automatically generates HTML pages based on your custom URL map.
 - **GitHub Pages Integration:** Seamless deployment to GitHub Pages.
 - **Automated Workflows:** Includes a GitHub Actions workflow for continuous deployment.
-
-## Getting Started
-
-### Prerequisites
-
-- Fork this template repository to our organization.
-
-### Setup Instructions
-
-1. **Fork the Repository:**
-   - Fork this repository to your GitHub account.
-
-2. **Clone Your Fork:**
-   - Clone the forked repository to your local machine:
-     ```bash
-     git clone https://github.com/<your-username>/glnk-template.git
-     cd glnk-template
-     ```
-
-3. **Customize `glnk.json`:**
-   - Update the `glnk.json` file with your go link mappings. Example structure:
-     ```json
-     {
-       "/short-link-1": "https://example.com/long-url-1",
-       "/short-link-2": "https://example.com/long-url-2"
-     }
-     ```
-
-4. **Update CNAME File:**
-   - Update the `CNAME` file with your `<username>.glnk.dev` subdomain:
-     ```
-     <username>.glnk.dev
-     ```
-
-6. **Push Changes:**
-   - Commit and push your changes to the main branch:
-     ```bash
-     git add .
-     git commit -m "Initial commit with custom go links"
-     git push origin main
-     ```
-
-7. **Enable GitHub Pages:**
-   - Go to the repository settings on GitHub.
-   - Under the "Pages" section, set the source to the `GitHub Actions`.
-
-## GitHub Actions Workflow
-
-This template includes a GitHub Actions workflow that automatically deploys the generated HTML pages to GitHub Pages. The workflow is defined in the `.github/workflows/deploy-pages.yml` file.
 
 ## Contribution Guidelines
 
