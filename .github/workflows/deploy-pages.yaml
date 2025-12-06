@@ -28,3 +28,4 @@ jobs:
         uses: glnk-dev/webapp@main
         with:
           GLNK_USERNAME: ${{ steps.fetch-metadata.outputs.username }}
+          GLNK_AUTHORIZED_ONLY: 1
