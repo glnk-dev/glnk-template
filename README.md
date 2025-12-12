@@ -20,10 +20,6 @@ We welcome contributions from everyone. Here are some ways you can contribute:
 
 For any issues or questions, please open an issue on our GitHub repository or contact us at support@glnk.dev.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 Special thanks to all contributors and the open-source community for their continuous support and inspiration.
