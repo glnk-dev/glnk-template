@@ -28,4 +28,4 @@ jobs:
         uses: glnk-dev/webapp@main
         with:
           GLNK_USERNAME: ${{ steps.fetch-metadata.outputs.username }}
-          GLNK_ACCESS_MODE: private
+          GLNK_ACCESS_MODE: public
